@@ -1,3 +1,4 @@
+import Link from 'next/link'
 export default async function Home() {
 
   interface League {
@@ -17,7 +18,11 @@ export default async function Home() {
       <h1 className="text-3xl font-bold">Sports App</h1>
       <p className="text-gray-500 mt-2">Browse leagues and teams</p>
       {res.leagues.map((item)=>(
-        <p key={item.idLeague}>{item.strLeague}</p>
+        <Link key={item.idLeague} href={`/leagues/${item.idLeague}`}>
+          <p>
+            {item.strLeague}
+          </p>
+        </Link>
       ))}
     </main>
   )
