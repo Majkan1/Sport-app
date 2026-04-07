@@ -2,8 +2,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>Sports App</h1>
-      <p>Browse leagues and teams</p>
+      <p>Hey this is a about section</p>
     </div>
   );
 }
