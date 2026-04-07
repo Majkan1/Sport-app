@@ -2,7 +2,7 @@ import Link from "next/link"
 
  export default function Navbar(){
   return(
-    <nav>
+    <nav className="flex justify-center gap-1">
       <Link href="/">SportsApp</Link>
       <Link href="/about">About</Link>
     </nav>
