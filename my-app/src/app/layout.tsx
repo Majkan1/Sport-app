@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Moja Apka",
-  description: "Opis mojej apki",
+  title: "Sports App",
+  description: "Browse leagues and teams",
 };
 
 export default function RootLayout({
