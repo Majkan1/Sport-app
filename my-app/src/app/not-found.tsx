@@ -6,7 +6,7 @@ export default function NotFound() {
       <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
       <h2 className="text-3xl font-semibold text-gray-700 mb-2">Page Not Found</h2>
       <p className="text-gray-500 mb-8 text-lg">
-        Sorry, we could npt find the league or page you are looking for.
+        Sorry, we could not find the league or page you are looking for.
       </p>
       <Link
         href="/"

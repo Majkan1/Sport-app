@@ -4,5 +4,5 @@ export default function Home() {
     <div>
       <p>Hey this is a about section</p>
     </div>
-  );
+  )
 }
