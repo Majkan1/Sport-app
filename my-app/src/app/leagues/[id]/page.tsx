@@ -1,6 +1,6 @@
 
 interface Props {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }
 
 export default async function Page({ params }: Props) {
@@ -14,9 +14,9 @@ export default async function Page({ params }: Props) {
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold">
-        {data.leagues[0].strLeague}
+        {data?.leagues[0]?.strLeague}
       </h1>
-      <p>{data.leagues[0].strSport}</p>
+      <p>{data?.leagues[0]?.strSport}</p>
     </div>
   );
 }
