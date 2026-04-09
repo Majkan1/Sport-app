@@ -1,9 +1,9 @@
 "use client"
-
+import Link from "next/link"
 import { useState } from "react"
-import SearchBar from "./Search"
-
-export default function Search(){
+import SearchBar from "./SearchBar"
+import { League } from "../types"
+export default function SearchWrapper(){
   const [SearchValue,setSearchValue] = useState("");  
   return(
     <div>

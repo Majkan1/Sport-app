@@ -1,4 +1,4 @@
-// src/types/index.ts
+
 export interface League {
   idLeague: number;
   strLeague: string;
