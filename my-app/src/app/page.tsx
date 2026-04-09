@@ -1,15 +1,6 @@
+import { ApiResponse } from './types';
 import Link from 'next/link'
 export default async function Home() {
-
-  interface League {
-    idLeague: number;
-    strLeague:string,
-    strSport: string,
-    strLeagueAlternate:string
-  }
-  interface ApiResponse {
-  leagues: League[]
-}
 
   const data = await fetch('https://www.thesportsdb.com/api/v1/json/3/all_leagues.php');
   const res: ApiResponse = await data.json();

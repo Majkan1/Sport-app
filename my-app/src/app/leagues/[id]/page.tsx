@@ -1,8 +1,4 @@
-
-interface Props {
-  params: Promise<{ id: string }>;
-}
-
+import { Props } from "../../types";
 export default async function Page({ params }: Props) {
   const { id } = await params;
   const res = await fetch(
