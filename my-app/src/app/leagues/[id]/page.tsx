@@ -1,10 +1,10 @@
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function Page({ params }: Props) {
-  const { id } = params;
+  const { id } = await params;
   const res = await fetch(
     `https://www.thesportsdb.com/api/v1/json/3/lookupleague.php?id=${id}`
   );
