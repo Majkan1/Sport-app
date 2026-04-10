@@ -9,7 +9,7 @@ export default function SearchWrapper({leagues}:{leagues:League[]}){
     league.strLeague.toLowerCase().includes(SearchValue.toLowerCase())
   );
   return(
-    <div className="space-y-8">
+    <div className="space-y-8 mb-57">
       <SearchBar value={SearchValue} onValue={setSearchValue}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
         {filterd.length > 0 ? (
