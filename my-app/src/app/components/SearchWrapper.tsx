@@ -9,13 +9,15 @@ export default function SearchWrapper({leagues}:{leagues:League[]}){
     league.strLeague.toLowerCase().includes(SearchValue.toLowerCase())
   );
   return(
-    <div className="mt-8 border-t pt-8">
+    <div className="">
       <SearchBar value={SearchValue} onValue={setSearchValue}/>
-      <div className="mt-6">
+      <div className="mt-6 grid grid-cols-3 gap-1 p-7">
         {filterd.length > 0 ? (
           filterd.map((item)=>(
             <Link key={item.idLeague} href={`/leagues/${item.idLeague}`}>
-              <p className="hover:text-blue-600">{item.strLeague}</p>
+              <div>
+                <p className="p-7 hover:text-blue-600">{item.strLeague}</p>
+              </div>
             </Link>
           ))
         ) : (
