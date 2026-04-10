@@ -11,12 +11,12 @@ export default function SearchWrapper({leagues}:{leagues:League[]}){
   return(
     <div className="">
       <SearchBar value={SearchValue} onValue={setSearchValue}/>
-      <div className="mt-6 grid grid-cols-3 gap-1 p-7">
+      <div className="mt-6 grid grid-cols-3 gap-1 p-7 items-center">
         {filterd.length > 0 ? (
           filterd.map((item)=>(
             <Link key={item.idLeague} href={`/leagues/${item.idLeague}`}>
               <div>
-                <p className="p-7 hover:text-blue-600">{item.strLeague}</p>
+                <p className=" bg-amber-100 rounded-2xl p-7 hover:text-blue-600">{item.strLeague}</p> 
               </div>
             </Link>
           ))
