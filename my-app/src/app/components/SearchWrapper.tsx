@@ -3,12 +3,25 @@ import Link from "next/link"
 import { useState } from "react"
 import SearchBar from "./SearchBar"
 import { League } from "../types"
-export default function SearchWrapper(){
+export default function SearchWrapper({leagues}:{leagues:League[]}){
   const [SearchValue,setSearchValue] = useState("");  
+  const filterd = leagues.filter((league)=>
+    league.strLeague.toLowerCase().includes(SearchValue.toLowerCase())
+  );
   return(
-    <div>
-     
-     <SearchBar value={SearchValue} setValue={setSearchValue}/> 
+    <div className="mt-8 border-t pt-8">
+      <SearchBar value={SearchValue} onValue={setSearchValue}/>
+      <div className="mt-6">
+        {filterd.length > 0 ? (
+          filterd.map((item)=>(
+            <Link key={item.idLeague} href={`/leagues/${item.idLeague}`}>
+              <p className="hover:text-blue-600">{item.strLeague}</p>
+            </Link>
+          ))
+        ) : (
+          <p className="text-gray-500">No leagues found</p>
+        )}
+      </div>
     </div>
     )
 }

@@ -1,14 +1,14 @@
 "use client"
-export default function SearchBar({value,setValue}:{
+export default function SearchBar({value,onValue}:{
   value:string,
-  setValue:(value:string)=> void
+  onValue:(value:string)=> void
 }){
   return(
     <div className="flex justify-center">
       <input 
       placeholder="Write here the league"
       value={value}
-      onChange={(e)=>{setValue(e.target.value)}}
+      onChange={(e)=>{onValue(e.target.value)}}
       />
     </div>
   )
