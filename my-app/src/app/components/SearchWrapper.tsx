@@ -14,10 +14,8 @@ export default function SearchWrapper({leagues}:{leagues:League[]}){
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
         {filterd.length > 0 ? (
           filterd.map((item)=>(
-            <Link key={item.idLeague} href={`/leagues/${item.idLeague}`}>
-              <div className="group h-full">
-                <p className="  bg-blue-950 rounded-xl p-6 text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer">{item.strLeague}</p> 
-              </div>
+            <Link className="className= bg-blue-950 rounded-xl p-6 text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" key={item.idLeague} href={`/leagues/${item.idLeague}`}>
+              {item.strLeague} 
             </Link>
           ))
         ) : (
