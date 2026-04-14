@@ -2,7 +2,7 @@ import { Props } from "../../types";
 export default async function Page({ params }: Props) {
   const { id } = await params;
   const res = await fetch(
-    `https://www.thesportsdb.com/api/v1/json/3/lookupleague.php?id=${id}`
+    `https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?s=Soccer`
   );
 
   const data = await res.json();

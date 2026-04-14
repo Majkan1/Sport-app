@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
+      <body className="min-h-full flex flex-col bg-linear-to-br from-slate-50 via-blue-50 to-slate-100">
         <Navbar/>
         {children}
         <Footer/>

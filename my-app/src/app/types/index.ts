@@ -2,7 +2,9 @@
 export interface League {
   idLeague: number;
   strLeague: string;
-  strSport: string;
+  intFormedYear:number;
+  strCountry:string;
+  strDescriptionEN:string;
   strLeagueAlternate: string;
 }
 
