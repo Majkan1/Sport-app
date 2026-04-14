@@ -6,10 +6,11 @@ export interface League {
   strCountry:string;
   strDescriptionEN:string;
   strLeagueAlternate: string;
+  strLogo:string;
 }
 
 export interface ApiResponse {
-  leagues: League[];
+  countries:League[];
 }
 
 export interface Props {
