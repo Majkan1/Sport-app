@@ -3,10 +3,10 @@ import Link from "next/link"
 import { useState } from "react"
 import SearchBar from "./SearchBar"
 import { League } from "../types"
-export default function SearchWrapper({countries}:{countries:League[]}){
+export default function SearchWrapper({leagues}:{leagues:League[]}){
   const [SearchValue,setSearchValue] = useState("");  
-  const filterd = countries.filter((country)=>
-    country.strLeague.toLowerCase().includes(SearchValue.toLowerCase())
+  const filterd = leagues.filter((league)=>
+    league.strLeague.toLowerCase().includes(SearchValue.toLowerCase())
   );
   return(
     <div className="space-y-8 mb-57">
@@ -14,7 +14,7 @@ export default function SearchWrapper({countries}:{countries:League[]}){
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
         {filterd.length > 0 ? (
           filterd.map((item)=>(
-            <Link className="className= bg-blue-950 rounded-xl p-6 text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" key={item.idLeague} href={`/leagues/${item.idLeague}`}>
+            <Link className="bg-blue-950 rounded-xl p-6 text-white font-medium transition-all duration-300 transform hover:scale-105 cursor-pointer" key={item.idLeague} href={`/leagues/${item.idLeague}`}>
               {item.strLeague} 
             </Link>
           ))

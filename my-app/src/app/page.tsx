@@ -6,7 +6,7 @@ export default async function Home() {
   const res: ApiResponse = await data.json();
   return (
     <main className="max-w-4xl mx-auto p-8">
-      <SearchWrapper countries={res.countries}/>
+      <SearchWrapper leagues={res.leagues}/>
     </main>
   )
 }

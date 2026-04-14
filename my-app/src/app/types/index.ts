@@ -10,7 +10,7 @@ export interface League {
 }
 
 export interface ApiResponse {
-  countries:League[];
+  leagues:League[];
 }
 
 export interface Props {
