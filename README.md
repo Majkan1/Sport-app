@@ -6,6 +6,9 @@ Sports league browser built with Next.js, TypeScript, and Tailwind CSS. The app 
 
 [sport-app-majkan.vercel.app](https://sport-app-majkan.vercel.app/)
 
+## Photo
+<img width="1443" height="774" alt="image" src="https://github.com/user-attachments/assets/e4ad300d-74b2-455a-95fe-46cb730d0f28" />
+
 ## Highlights
 
 - Search leagues in real time from a large global dataset
@@ -66,6 +69,7 @@ my-app/
       loading.tsx      Global loading UI
       not-found.tsx    Custom 404 page
       types/           Shared TypeScript interfaces
+      page.tsx         The main page 
 ```
 
 ## Notes
