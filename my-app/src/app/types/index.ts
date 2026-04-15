@@ -10,7 +10,8 @@ export interface League {
 }
 
 export interface ApiResponse {
-  countries:League[];
+  countries?:League[] | null;
+  leagues?:League[] | null;
 }
 
 export interface Props {
