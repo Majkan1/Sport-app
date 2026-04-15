@@ -3,7 +3,7 @@ import Link from "next/link"
 import { useState } from "react"
 import SearchBar from "./SearchBar"
 import { League } from "../types"
-export default function SearchWrapper({leagues}:{leagues:League[]}){
+export default function SearchWrapper({leagues = []}:{leagues?:League[]}){
   const [SearchValue,setSearchValue] = useState("");  
   const filterd = leagues.filter((league)=>
     league.strLeague.toLowerCase().includes(SearchValue.toLowerCase())
