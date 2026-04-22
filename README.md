@@ -1,6 +1,6 @@
 # Sport App
 
-Sports league browser built with Next.js, TypeScript, and Tailwind CSS. The app lets users search leagues from around the world, open dedicated league pages, and explore data fetched from a public sports API.
+Sports league browser built with Next.js, TypeScript, and Tailwind CSS. The app lets users search leagues from around the world, open dedicated league pages, and explore data fetched from a public sports API .
 
 ## Live Demo
 
