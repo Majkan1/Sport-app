@@ -7,6 +7,9 @@ export interface League {
   strDescriptionEN:string;
   strLeagueAlternate: string;
   strLogo:string;
+  strWebsite:string
+  strFacebook:string,
+  strInstagram:string
 }
 
 export interface ApiResponse {
