@@ -14,6 +14,6 @@ export interface ApiResponse {
   leagues?:League[] | null;
 }
 
-export interface Props {
+export interface Props{
   params: Promise<{ id: string }>;
 }
