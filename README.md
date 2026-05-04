@@ -60,6 +60,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Project Structure
 
 ```text
+my-app/
   src/
     app/
       components/      Reusable UI such as navbar, search, and footer
