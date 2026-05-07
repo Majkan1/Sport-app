@@ -1,4 +1,5 @@
 import { League,Team, Props } from "../../types";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
 export default async function Page({ params }: Props) {
@@ -23,6 +24,16 @@ export default async function Page({ params }: Props) {
             <h2 className="text-lg font-bold">{team.strTeam}</h2>
             {<p className="text-sm">{team.strCountry}</p>}
             {<p className="text-sm">{team.strStadium}</p>}
+            {team.strWebsite ? (
+              <Link
+                href={team.strWebsite.trim().startsWith("http") ? team.strWebsite.trim() : `https://${team.strWebsite.trim()}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Visit website
+              </Link>
+            ) : null}
           </div>
         ))
         
