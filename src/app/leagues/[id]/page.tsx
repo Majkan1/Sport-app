@@ -1,6 +1,7 @@
 import { Props } from "../../types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { getAllLeagues } from "../../lib/api";
 export default async function Page({ params }: Props
 
 ) {
