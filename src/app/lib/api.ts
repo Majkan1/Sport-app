@@ -23,3 +23,13 @@ export async function getPlayersByTeam(teamId: string) {
   const data = await res.json();
   return data.player;
 }
+
+export async function getTeamsByLeague(leagueId: string) {
+  const res = await fetch(
+    `${BASE}/lookup_all_teams.php?id=${leagueId}`,
+    { next: { revalidate: 3600 } }
+  );
+  if (!res.ok) return [];
+  const data = await res.json();
+  return data.teams ?? [];
+}
