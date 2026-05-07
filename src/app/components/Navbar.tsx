@@ -5,7 +5,6 @@ import Link from "next/link"
     <nav className="flex justify-center gap-4">
       <Link href="/">SportsApp</Link>
       <Link href="/about">About</Link>
-      <p>Favourite one:{}</p>
     </nav>
   )
 }

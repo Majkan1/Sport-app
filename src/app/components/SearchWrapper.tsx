@@ -20,10 +20,6 @@ export default function SearchWrapper({leagues = []}:{leagues?:League[] | null})
               <Link href={`/leagues/${item.idLeague}`}>
                 {item.strLeague} 
               </Link>
-              <button className="m-1 bg-amber-300 rounded-xl p-1">
-                Add to the favourite
-                <input type="checkbox" className="m-1" />
-              </button>
             </div>
           ))
         ) : (
