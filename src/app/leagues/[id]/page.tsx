@@ -1,5 +1,6 @@
 import { League,Team, Props } from "../../types";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
 export default async function Page({ params }: Props) {
@@ -29,7 +30,7 @@ export default async function Page({ params }: Props) {
                 href={team.strWebsite.trim().startsWith("http") ? team.strWebsite.trim() : `https://${team.strWebsite.trim()}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:underline block"
               >
                 Visit website
               </Link>
@@ -39,7 +40,7 @@ export default async function Page({ params }: Props) {
                 href={team.strFacebook.trim().startsWith("http") ? team.strFacebook.trim() : `https://${team.strFacebook.trim()}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:underline block"
               >
                 Visit Facebook
               </Link>
@@ -54,6 +55,14 @@ export default async function Page({ params }: Props) {
                 Visit Instagram
               </Link>
             ) : null}
+          {team.strBadge ? (
+            <Image
+              src={team.strBadge}
+              alt="Club logo"
+              width={100}
+              height={100}
+            />
+          ) : null}
           </div>
         ))
         

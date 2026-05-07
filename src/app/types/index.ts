@@ -21,6 +21,7 @@ export interface Team {
   strWebsite?: string;
   strFacebook?:string;
   strInstagram?:string;
+  strBadge?:string;
 }
 
 export interface ApiResponse {
