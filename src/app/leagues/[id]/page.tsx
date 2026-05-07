@@ -1,4 +1,4 @@
-import { Props } from "../../types";
+import { League, Props } from "../../types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues } from "../../lib/api";
@@ -6,16 +6,8 @@ export default async function Page({ params }: Props
 
 ) {
   const { id } = await params;
-  const res = await fetch(
-    `https://www.thesportsdb.com/api/v1/json/3/lookupleague.php?id=${id}`
-  );
-
-  if (!res.ok) {
-    notFound();
-  }
-
-  const data = await res.json();
-  const league = data?.leagues?.[0];
+  const leagues = await getAllLeagues();
+  const league = leagues?.find((item: League) => String(item.idLeague) === id);
 
   if (!league) {
     notFound();
