@@ -19,6 +19,8 @@ export interface Team {
   strStadium?: string;
   strDescriptionEN?: string;
   strWebsite?: string;
+  strFacebook?:string;
+  strInstagram?:string;
 }
 
 export interface ApiResponse {

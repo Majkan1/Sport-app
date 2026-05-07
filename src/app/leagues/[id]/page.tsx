@@ -34,6 +34,26 @@ export default async function Page({ params }: Props) {
                 Visit website
               </Link>
             ) : null}
+            {team.strFacebook ? (
+              <Link
+                href={team.strFacebook.trim().startsWith("http") ? team.strFacebook.trim() : `https://${team.strFacebook.trim()}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Visit Facebook
+              </Link>
+            ) : null}
+            {team.strInstagram ? (
+              <Link
+                href={team.strInstagram.trim().startsWith("http") ? team.strInstagram.trim() : `https://${team.strInstagram.trim()}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                Visit Instagram
+              </Link>
+            ) : null}
           </div>
         ))
         
