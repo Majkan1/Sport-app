@@ -1,5 +1,4 @@
-import { League, Props } from "../../types";
-//import Image from "next/image";
+import { League,Team, Props } from "../../types";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
 export default async function Page({ params }: Props) {
@@ -12,12 +11,21 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
-  //const teams = await getTeamsByLeague(league.strLeague)
+  const teams = await getTeamsByLeague(league.strLeague)
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold flex justify-center">
         {league.strLeague}
       </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+        {teams && teams.map((team:Team)=>(
+          <div key={team.idTeam} className="">
+            <h2 className="text-lg font-bold">{team.strTeam}</h2>
+          </div>
+        ))
+        
+        }
+      </div>
     </div>
   )
 }

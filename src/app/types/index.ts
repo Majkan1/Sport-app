@@ -12,6 +12,15 @@ export interface League {
   strInstagram:string
 }
 
+export interface Team {
+  idTeam: number;
+  strTeam: string;
+  strCountry?: string;
+  strStadium?: string;
+  strDescriptionEN?: string;
+  strWebsite?: string;
+}
+
 export interface ApiResponse {
   countries?:League[] | null;
   leagues?:League[] | null;
