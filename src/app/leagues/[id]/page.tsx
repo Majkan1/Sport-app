@@ -34,12 +34,6 @@ export default async function Page({ params }: Props
         <div className="flex gap-1">
           <div>
             <a href={`http://${league.strWebsite}`} target="_blank" rel="noreferrer noopener"> 
-              <Image
-              src="/Albanian_Flag.svg"
-              alt="Albanian flag"
-              width={56}
-              height={56}
-              />
             </a>
           </div>
           <div>
