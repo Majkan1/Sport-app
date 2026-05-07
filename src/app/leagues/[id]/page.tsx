@@ -26,13 +26,6 @@ export default async function Page({ params }: Props
         {league.strLeague}
       </h1>
       <div className="flex justify-center">
-        <Image
-        src = {league.strLogo}
-        alt = {`${league.strLeague} logo`} 
-        width={256}
-        height={256}
-        className="object-contain w-64 h-auto"
-        />
       </div>
       <div className="flex items-center flex-col p-3 m-3 ">
         <h3 className="font-bold m-3">{league.strSport}</h3>
