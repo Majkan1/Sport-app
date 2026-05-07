@@ -24,7 +24,7 @@ export async function getPlayersByTeam(teamId: string) {
   return data.player;
 }
 
-export async function getTeamsByLeague(leagueId: string) {
+export async function getTeamsByLeagues(leagueId: string) {
   const res = await fetch(
     `${BASE}/lookup_all_teams.php?id=${leagueId}`,
     { next: { revalidate: 3600 } }
