@@ -1,18 +1,19 @@
-import { League, Props } from "../../types";
+import { League,Team, Props } from "../../types";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAllLeagues } from "../../lib/api";
+import { getTeamsByLeague } from "../../lib/api";
 export default async function Page({ params }: Props
 
 ) {
   const { id } = await params;
-  const leagues = await getAllLeagues();
-  const league = leagues?.find((item: League) => String(item.idLeague) === id);
+  const league = await getTeamsByLeague();
+  const league = teams?.find((item: League) => String(item.idLeague) === id);
 
-  if (!league) {
+  if (!teams) {
     notFound();
   }
 
+  const teams = await getTeamsByLeague(league.strLeague)
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold flex justify-center">
