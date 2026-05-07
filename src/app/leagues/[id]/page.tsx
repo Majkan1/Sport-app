@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
+import ReadMore from "../../components/ReadMore";
 export default async function Page({ params }: Props) {
 
   const { id } = await params;
@@ -55,7 +56,7 @@ export default async function Page({ params }: Props) {
                 Visit Instagram
               </Link>
             ) : null}
-          {team.strBadge ? (
+            {team.strBadge ? (
             <Image
               src={team.strBadge}
               alt="Club logo"
@@ -63,10 +64,10 @@ export default async function Page({ params }: Props) {
               height={100}
             />
           ) : null}
+            <ReadMore text={team.strDescriptionEN} />
           </div>
         ))
-        
-        }
+      }
       </div>
     </div>
   )
