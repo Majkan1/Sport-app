@@ -1,10 +1,9 @@
+import { getAllLeagues } from './lib/api';
 import SearchWrapper from './components/SearchWrapper';
 import { ApiResponse } from './types';
 export default async function Home() {
 
-  const response = await fetch('https://www.thesportsdb.com/api/v1/json/3/all_leagues.php', {
-    next: { revalidate: 3600 },
-  });
+  const response = await getAllLeagues();
 
   let res: ApiResponse | null = null;
   if (response.ok) {

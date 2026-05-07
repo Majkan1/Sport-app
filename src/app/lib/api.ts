@@ -2,7 +2,7 @@ const BASE = 'https://www.thesportsdb.com/api/v1/json/123';
 
 export async function getAllLeagues() {
   const res = await fetch(`${BASE}/all_leagues.php`, {
-    next: { revalidate: 86400 } // cache 24h
+    next: { revalidate: 86400 } 
   });
   const data = await res.json();
   return data.leagues;
