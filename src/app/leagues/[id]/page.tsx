@@ -1,10 +1,9 @@
 import { League, Props } from "../../types";
-import Image from "next/image";
+//import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
-export default async function Page({ params }: Props
+export default async function Page({ params }: Props) {
 
-) {
   const { id } = await params;
   const leagues = await getAllLeagues();
   const league = leagues?.find((item: League) => String(item.idLeague) === id);
@@ -13,8 +12,12 @@ export default async function Page({ params }: Props
     notFound();
   }
 
-  const teams = await getTeamsByLeague(league.strLeague)
+  //const teams = await getTeamsByLeague(league.strLeague)
   return (
-    <p>hej</p>
-  );
+    <div className="p-8">
+      <h1 className="text-2xl font-bold flex justify-center">
+        {league.strLeague}
+      </h1>
+    </div>
+  )
 }
