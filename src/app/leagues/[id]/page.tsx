@@ -21,6 +21,8 @@ export default async function Page({ params }: Props) {
         {teams && teams.map((team:Team)=>(
           <div key={team.idTeam} className="">
             <h2 className="text-lg font-bold">{team.strTeam}</h2>
+            {<p className="text-sm">{team.strCountry}</p>}
+            {<p className="text-sm">{team.strStadium}</p>}
           </div>
         ))
         
