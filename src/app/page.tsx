@@ -2,7 +2,7 @@ import SearchWrapper from './components/SearchWrapper';
 import { ApiResponse } from './types';
 export default async function Home() {
 
-  const response = await fetch('https://www.thesportsdb.com/api/v1/json/3/search_all_leagues.php?s=Soccer', {
+  const response = await fetch('https://www.thesportsdb.com/api/v1/json/3/all_leagues.php', {
     next: { revalidate: 3600 },
   });
 
