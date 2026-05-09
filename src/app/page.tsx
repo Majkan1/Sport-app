@@ -4,7 +4,7 @@ export default async function Home() {
   const leagues = await getAllLeagues();
 
   return (
-    <main className="max-w-4xl mx-auto p-8">
+    <main className="mx-auto max-w-6xl px-6 py-10 sm:px-8">
       <SearchWrapper leagues={leagues}/>
     </main>
   )
