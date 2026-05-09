@@ -1,77 +1,75 @@
-# Sport App
+# SportsApp
 
-Sports league browser built with Next.js, TypeScript, and Tailwind CSS. The app lets users search leagues from around the world, open dedicated league pages, and explore data fetched from a public sports API .
+SportsApp is a lightweight football leagues browser built with Next.js, TypeScript and Tailwind CSS. Browse leagues and teams, open detail pages, and follow links to official team websites and social media. Data is provided by TheSportsDB API.
 
-## Live Demo
+## Live demo
 
-[sport-app-majkan.vercel.app](https://sport-app-majkan.vercel.app/)
+[https://sport-app-majkan.vercel.app](https://sport-app-majkan.vercel.app)
 
-## Photo
-<img width="1443" height="774" alt="image" src="https://github.com/user-attachments/assets/e4ad300d-74b2-455a-95fe-46cb730d0f28" />
+## Key features
 
-## Highlights
+- Browse leagues and teams with dynamic routing
+- Team pages with logo, stadium and social links
+- Graceful loading, error and not-found states
+- TypeScript models for safer data handling
 
-- Search leagues in real time from a large global dataset
-- Open league details with dynamic routing
-- Handle loading, error, and not-found states for a smoother UX
-- Use typed API models to keep data handling predictable
-- Deploy the project on Vercel
+## Tech stack
 
-## Tech Stack
-
-- Next.js 16
-- React
+- Next.js 16 (App Router)
+- React 19
 - TypeScript
 - Tailwind CSS
-- TheSportsDB API
-- Vercel
+- TheSportsDB (data provider)
 
-## What I Practiced
+## Getting started (local)
 
-- Building with the Next.js App Router
-- Working with dynamic routes and server-rendered data
-- Creating better UX with dedicated loading and error states
-- Structuring a small TypeScript project around reusable UI components
-
-## Challenges
-
-- Mapping external API responses into safe TypeScript types
-- Keeping the search experience fast and clear
-- Designing a detail page that still reads well when league data varies
-
-## Future Improvements
-
-- Add favourites saved in localStorage
-- Improve the league details layout with stronger visual hierarchy
-- Add filters by country or sport
-- Add tests for key components and data handling
-
-## Getting Started
+1. Clone the repo:
 
 ```bash
 git clone https://github.com/Majkan1/Sport-app.git
-cd Sport-app/my-app
+cd Next.js
+```
+
+2. Install dependencies and run the dev server:
+
+```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open http://localhost:3000 in your browser.
 
-## Project Structure
+## Project structure (important parts)
 
-```text
-my-app/
-  src/
-    app/
-      components/      Reusable UI such as navbar, search, and footer
-      leagues/[id]/    Dynamic league detail pages
-      error.tsx        Global error UI
-      loading.tsx      Global loading UI
-      not-found.tsx    Custom 404 page
-      types/           Shared TypeScript interfaces
-      page.tsx         The main page 
+```
+src/
+  app/
+    about/page.tsx        # About page
+    leagues/[leagueId]/  # League and teams routes
+    components/          # Reusable UI components
+    lib/                  # API helpers
+    types/                # TypeScript interfaces
 ```
 
-## Notes
+## Contributing
 
-This project is still being improved. A strong next step is moving the app from the `my-app` subfolder to the repository root and expanding the feature set with user-facing improvements such as favourites and filters.
+Contributions are welcome. Typical workflow:
+
+1. Create a branch: `git checkout -b feat/your-feature`
+2. Implement changes and add tests where appropriate
+3. Push and open a pull request
+
+Please keep commits focused and add a short description in the PR.
+
+## Roadmap / Ideas
+
+- Add favourites persisted in localStorage
+- Filters by country or competition type
+- Unit and integration tests for key components
+- Improve accessibility and mobile layout
+
+## License
+
+This project is MIT-licensed — feel free to reuse and adapt.
+
+---
