@@ -9,11 +9,11 @@ export default function AboutPage() {
         external sports data in a clear, easy-to-navigate interface.
       </p>
 
-      <h2>What you'll find in the app</h2>
+      <h2>What you will find in the app</h2>
       <ul>
         <li>Lists of leagues with basic info (country, founding year).</li>
         <li>Teams for each league with logos and short descriptions.</li>
-        <li>Quick links to teams' websites and social profiles.</li>
+        <li>Quick links to teams  websites and social profiles.</li>
       </ul>
 
       <h2>Data source</h2>
