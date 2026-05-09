@@ -3,12 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
-import ReadMore from "../../components/ReadMore";
 export default async function Page({ params }: Props) {
 
-  const { id } = await params;
+  const { leagueId } = await params;
   const leagues = await getAllLeagues();
-  const league = leagues?.find((item: League) => String(item.idLeague) === id);
+  const league = leagues?.find((item: League) => String(item.idLeague) === leagueId);
 
   if (!league) {
     notFound();
@@ -22,52 +21,20 @@ export default async function Page({ params }: Props) {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
         {teams && teams.map((team:Team)=>(
-          <div key={team.idTeam} className="">
-            <h2 className="text-lg font-bold">{team.strTeam}</h2>
-            {<p className="text-sm">{team.strCountry}</p>}
-            {<p className="text-sm">{team.strStadium}</p>}
-            {team.strWebsite ? (
-              <Link
-                href={team.strWebsite.trim().startsWith("http") ? team.strWebsite.trim() : `https://${team.strWebsite.trim()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline block"
-              >
-                Visit website
-              </Link>
-            ) : null}
-            {team.strFacebook ? (
-              <Link
-                href={team.strFacebook.trim().startsWith("http") ? team.strFacebook.trim() : `https://${team.strFacebook.trim()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline block"
-              >
-                Visit Facebook
-              </Link>
-            ) : null}
-            {team.strInstagram ? (
-              <Link
-                href={team.strInstagram.trim().startsWith("http") ? team.strInstagram.trim() : `https://${team.strInstagram.trim()}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Visit Instagram
-              </Link>
-            ) : null}
-            {team.strBadge ? (
-            <Image
-              src={team.strBadge}
-              alt="Club logo"
-              width={100}
-              height={100}
-            />
-          ) : null}
-            <ReadMore text={team.strDescriptionEN} />
-          </div>
-        ))
-      }
+          <Link key={team.idTeam} href={`/leagues/${leagueId}/teams/${team.idTeam}`} className="hover:shadow-lg transition-shadow rounded-lg p-4 border border-gray-200">
+            <div className="">
+              <h2 className="text-lg font-bold">{team.strTeam}</h2>
+              {team.strBadge ? (
+                <Image
+                  src={team.strBadge}
+                  alt="Club logo"
+                  width={100}
+                  height={100}
+                />
+              ) : null}
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   )

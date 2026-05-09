@@ -30,5 +30,5 @@ export interface ApiResponse {
 }
 
 export interface Props{
-  params: Promise<{ id: string }>;
+  params: Promise<{ leagueId: string }>;
 }
