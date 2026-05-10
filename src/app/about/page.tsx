@@ -56,8 +56,3 @@ export default function AboutPage() {
     </main>
   );
 }
-        </a>
-      </div>
-    </main>
-  );
-}
