@@ -1,7 +1,11 @@
 export default function Footer(){
   return(
-    <div className="flex justify-center">
-      <footer className="bottom-2.5">This website was created by Mikołaj Michalak</footer>
-    </div>
+    <footer className="mt-auto py-6 border-t-4 border-transparent">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+        <div className="flex justify-center items-center">
+          <p className="text-center">© 2026 Created by <span className="font-bold">Mikołaj Michalak</span></p>
+        </div>
+      </div>
+    </footer>
   )
 }
