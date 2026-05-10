@@ -3,16 +3,18 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <main className="max-w-4xl mx-auto p-8 min-h-[calc(100vh-200px)] flex flex-col items-center justify-center text-center">
-      <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
-      <h2 className="text-3xl font-semibold text-gray-700 mb-2">Page Not Found</h2>
-      <p className="text-gray-500 mb-8 text-lg">
-        Sorry, we could not find the league or page you are looking for.
+      <div className="mb-6">
+        <h1 className="text-7xl font-black text-slate-900 mb-2">404</h1>
+      </div>
+      <h2 className="text-3xl font-bold text-slate-900 mb-3">Page Not Found</h2>
+      <p className="text-slate-600 mb-10 text-base max-w-md leading-relaxed">
+        Sorry, we couldn't find the league or page you're looking for.
       </p>
       <Link
         href="/"
-        className="bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-6 rounded-lg transition"
+        className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
       >
-        Back to Home
+        ⬅️ Back to Home
       </Link>
     </main>
   );

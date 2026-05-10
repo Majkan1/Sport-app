@@ -19,11 +19,11 @@ export default function ReadMore({ text, limit = 180 }: ReadMoreProps) {
 
   return (
     <div className="space-y-2">
-      <p className="text-sm text-slate-700">{displayText}</p>
+      <p className="text-sm text-slate-600 leading-relaxed">{displayText}</p>
       {shouldTruncate ? (
         <button
           type="button"
-          className="text-blue-600 hover:underline text-sm font-medium"
+          className="text-blue-600 hover:text-blue-800 hover:underline text-sm font-semibold transition-colors duration-200"
           onClick={() => setExpanded((value) => !value)}
         >
           {expanded ? "Show less" : "Read more"}

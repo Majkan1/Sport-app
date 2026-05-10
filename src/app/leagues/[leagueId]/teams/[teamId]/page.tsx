@@ -29,35 +29,35 @@ export default async function Page({ params }: PageProps) {
 	}
 
 	return (
-		<div className="mx-auto max-w-4xl px-6 py-10 sm:px-8">
-			<Link href={`/leagues/${leagueId}`} className="mb-4 inline-block text-slate-600 hover:underline">
+		<div className="mx-auto max-w-4xl px-6 py-8 sm:px-8 flex-1">
+			<Link href={`/leagues/${leagueId}`} className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900 font-semibold mb-6 transition-colors">
 				← Back to {league.strLeague}
 			</Link>
-			<div className="mt-6 rounded-3xl border border-slate-200 bg-white p-8">
+			<div className="mt-6 rounded-lg bg-slate-50 p-8 shadow-md">
 				{team.strBadge ? (
-					<div className="mb-6 flex h-40 w-40 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+					<div className="mb-6 flex h-40 w-40 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm">
 						<Image
 							src={team.strBadge}
 							alt={team.strTeam}
 							width={150}
 							height={150}
-							className="h-auto w-auto max-h-32 max-w-32 object-contain"
+							className="h-auto w-auto max-h-36 max-w-36 object-contain"
 						/>
 					</div>
 				) : null}
 				<h1 className="mb-2 text-3xl font-bold text-slate-900">{team.strTeam}</h1>
-				<p className="mb-1 text-lg text-slate-600">Country: {team.strCountry}</p>
-				{team.strStadium && <p className="mb-4 text-lg text-slate-600">Stadium: {team.strStadium}</p>}
+				<p className="mb-1 text-base text-slate-700 font-semibold">🌍 Country: <span className="text-slate-900">{team.strCountry}</span></p>
+				{team.strStadium && <p className="mb-6 text-base text-slate-700 font-semibold">🏟️ Stadium: <span className="text-teal-700">{team.strStadium}</span></p>}
 
-				<div className="mb-6 flex flex-wrap gap-3">
+				<div className="mb-8 flex flex-wrap gap-3">
 					{team.strWebsite ? (
 						<Link
 							href={team.strWebsite.trim().startsWith("http") ? team.strWebsite.trim() : `https://${team.strWebsite.trim()}`}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-slate-600 hover:underline"
+							className="inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-5 py-2 font-semibold hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md"
 						>
-							Visit website
+							🌐 Website
 						</Link>
 					) : null}
 					{team.strFacebook ? (
@@ -65,9 +65,9 @@ export default async function Page({ params }: PageProps) {
 							href={team.strFacebook.trim().startsWith("http") ? team.strFacebook.trim() : `https://${team.strFacebook.trim()}`}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-slate-600 hover:underline"
+							className="inline-flex items-center gap-2 rounded-lg bg-blue-600 text-white px-5 py-2 font-semibold hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md"
 						>
-							Facebook
+							👍 Facebook
 						</Link>
 					) : null}
 					{team.strInstagram ? (
@@ -75,14 +75,17 @@ export default async function Page({ params }: PageProps) {
 							href={team.strInstagram.trim().startsWith("http") ? team.strInstagram.trim() : `https://${team.strInstagram.trim()}`}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-slate-600 hover:underline"
+							className="inline-flex items-center gap-2 rounded-lg bg-slate-700 text-white px-5 py-2 font-semibold hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md"
 						>
-							Instagram
+							📷 Instagram
 						</Link>
 					) : null}
 				</div>
 
-				<ReadMore text={team.strDescriptionEN} />
+				<div className="pt-6">
+					<h3 className="text-lg font-bold text-slate-900 mb-3">About this team</h3>
+					<ReadMore text={team.strDescriptionEN} />
+				</div>
 			</div>
 		</div>
 	);
