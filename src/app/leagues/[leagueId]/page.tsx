@@ -1,9 +1,9 @@
-import { League,Team, Props } from "../../types";
+import { League, Team, PageProps } from "../../types";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
-export default async function Page({ params }: Props) {
+export default async function Page({ params }: PageProps<{ leagueId: string }>) {
 
   const { leagueId } = await params;
   const leagues = await getAllLeagues();

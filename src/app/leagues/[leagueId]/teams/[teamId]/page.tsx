@@ -1,18 +1,11 @@
-import { League, Team } from "../../../../types";
+import { League, Team, PageProps } from "../../../../types";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getAllLeagues, getTeamsByLeague } from "../../../../lib/api";
 import ReadMore from "../../../../components/ReadMore";
 
-type PageProps = {
-	params: {
-		leagueId: string;
-		teamId: string;
-	};
-};
-
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: PageProps<{ leagueId: string; teamId: string }>) {
 	const { leagueId, teamId } = await params;
 	const leagues = await getAllLeagues();
 	const league = leagues?.find((item: League) => String(item.idLeague) === leagueId);
