@@ -8,7 +8,7 @@ export default function NotFound() {
       </div>
       <h2 className="text-3xl font-bold text-slate-900 mb-3">Page Not Found</h2>
       <p className="text-slate-600 mb-10 text-base max-w-md leading-relaxed">
-        Sorry, we couldn't find the league or page you're looking for.
+        Sorry, we could not find the league or page you are looking for.
       </p>
       <Link
         href="/"

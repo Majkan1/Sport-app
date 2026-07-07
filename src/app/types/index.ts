@@ -24,11 +24,14 @@ export interface Team {
   strBadge?:string;
 }
 
-export interface ApiResponse {
-  countries?:League[] | null;
-  leagues?:League[] | null;
+export interface LeaguesResponse {
+  leagues: League[] | null;
 }
 
-export interface Props{
-  params: Promise<{ leagueId: string }>;
+export interface TeamsResponse {
+  teams: Team[] | null;
 }
+
+export type PageProps<T> = {
+  params: Promise<T>;
+};
