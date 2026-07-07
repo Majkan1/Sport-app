@@ -1,6 +1,6 @@
 import Link from "next/link"
 
- export default function Navbar(){
+export default function Navbar(){
   return(
     <nav className="border-b-4 border-transparent">
       <div className="mx-auto max-w-6xl px-6 py-3 sm:px-8 flex justify-between items-center">

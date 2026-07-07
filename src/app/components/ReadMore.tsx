@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 type ReadMoreProps = {
-  text?: string;
+  text?: string | null;
   limit?: number;
 };
 

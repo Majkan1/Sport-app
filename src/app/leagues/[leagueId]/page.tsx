@@ -1,13 +1,21 @@
-import { League, Team, PageProps } from "../../types";
+import { Team, PageProps } from "../../types";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAllLeagues,getTeamsByLeague } from "../../lib/api";
-export default async function Page({ params }: PageProps<{ leagueId: string }>) {
+import { getLeagueById, getTeamsByLeague } from "../../lib/api";
 
+export async function generateMetadata({
+  params,
+}: PageProps<{ leagueId: string }>): Promise<Metadata> {
   const { leagueId } = await params;
-  const leagues = await getAllLeagues();
-  const league = leagues?.find((item: League) => String(item.idLeague) === leagueId);
+  const league = await getLeagueById(leagueId);
+  return { title: league ? `${league.strLeague} — Sports App` : "League not found" };
+}
+
+export default async function Page({ params }: PageProps<{ leagueId: string }>) {
+  const { leagueId } = await params;
+  const league = await getLeagueById(leagueId);
 
   if (!league) {
     notFound();
