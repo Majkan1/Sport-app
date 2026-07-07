@@ -1,27 +1,27 @@
-
 export interface League {
-  idLeague: number;
+  idLeague: string;
   strLeague: string;
-  intFormedYear:number;
-  strCountry:string;
-  strDescriptionEN:string;
-  strLeagueAlternate: string;
-  strLogo:string;
-  strWebsite:string
-  strFacebook:string,
-  strInstagram:string
+  strSport?: string | null;
+  strLeagueAlternate?: string | null;
+  intFormedYear?: string | null;
+  strCountry?: string | null;
+  strDescriptionEN?: string | null;
+  strLogo?: string | null;
+  strWebsite?: string | null;
+  strFacebook?: string | null;
+  strInstagram?: string | null;
 }
 
 export interface Team {
-  idTeam: number;
+  idTeam: string;
   strTeam: string;
-  strCountry?: string;
-  strStadium?: string;
-  strDescriptionEN?: string;
-  strWebsite?: string;
-  strFacebook?:string;
-  strInstagram?:string;
-  strBadge?:string;
+  strCountry?: string | null;
+  strStadium?: string | null;
+  strDescriptionEN?: string | null;
+  strWebsite?: string | null;
+  strFacebook?: string | null;
+  strInstagram?: string | null;
+  strBadge?: string | null;
 }
 
 export interface LeaguesResponse {

@@ -1,6 +1,12 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function Error({error,reset,}: {error: Error;reset: () => void;}) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
   return (
     <div role="alert" className="flex min-h-screen items-center justify-center bg-white">
       <div className="max-w-md mx-auto px-6 py-10 bg-white rounded-lg shadow-sm border-l-4 border-red-500 text-center">
@@ -9,7 +15,9 @@ export default function Error({error,reset,}: {error: Error;reset: () => void;})
           <p className="text-slate-600 text-sm">Something went wrong</p>
         </div>
         <div className="mb-6 p-3 bg-red-50 rounded-lg">
-          <p className="text-red-700 font-semibold text-xs">{error.message || 'An unexpected error occurred'}</p>
+          <p className="text-red-700 font-semibold text-xs">
+            We could not load the data. Please check your connection and try again.
+          </p>
         </div>
         <button 
           onClick={reset}

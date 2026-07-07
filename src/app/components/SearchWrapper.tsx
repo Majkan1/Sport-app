@@ -11,7 +11,7 @@ export default function SearchWrapper({leagues = []}:{leagues?:League[] | null})
   );
 
   return(
-    <div className="space-y-8 mb-57">
+    <div className="space-y-8">
       <SearchBar value={searchValue} onValue={setSearchValue}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-4">
         {filtered.length > 0 ? (

@@ -1,23 +1,24 @@
-import { League, Team, PageProps } from "../../../../types";
+import { PageProps } from "../../../../types";
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getAllLeagues, getTeamsByLeague } from "../../../../lib/api";
+import { getLeagueById, getTeamById } from "../../../../lib/api";
 import ReadMore from "../../../../components/ReadMore";
+
+export async function generateMetadata({
+	params,
+}: PageProps<{ teamId: string }>): Promise<Metadata> {
+	const { teamId } = await params;
+	const team = await getTeamById(teamId);
+	return { title: team ? `${team.strTeam} — Sports App` : "Team not found" };
+}
 
 export default async function Page({ params }: PageProps<{ leagueId: string; teamId: string }>) {
 	const { leagueId, teamId } = await params;
-	const leagues = await getAllLeagues();
-	const league = leagues?.find((item: League) => String(item.idLeague) === leagueId);
+	const [league, team] = await Promise.all([getLeagueById(leagueId), getTeamById(teamId)]);
 
-	if (!league) {
-		notFound();
-	}
-
-	const teams = await getTeamsByLeague(league.strLeague);
-	const team = teams?.find((t: Team) => String(t.idTeam) === teamId);
-
-	if (!team) {
+	if (!league || !team) {
 		notFound();
 	}
 
