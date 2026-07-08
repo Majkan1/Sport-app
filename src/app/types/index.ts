@@ -17,6 +17,8 @@ export interface Team {
   strTeam: string;
   strCountry?: string | null;
   strStadium?: string | null;
+  intFormedYear?: string | null;
+  strLocation?: string | null;
   strDescriptionEN?: string | null;
   strWebsite?: string | null;
   strFacebook?: string | null;

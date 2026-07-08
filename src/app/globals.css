@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+  --color-pitch-bg: oklch(0.17 0.02 255);
+  --color-pitch-surface: oklch(0.21 0.02 255);
+  --color-pitch-surface2: oklch(0.23 0.02 255);
+  --color-pitch-line: oklch(0.26 0.02 255);
+  --color-pitch-border: oklch(0.27 0.02 255);
+  --color-pitch-border2: oklch(0.3 0.02 255);
+  --color-pitch-border3: oklch(0.34 0.02 255);
+  --color-pitch-text: oklch(0.96 0.005 255);
+  --color-pitch-text2: oklch(0.92 0.005 255);
+  --color-pitch-body: oklch(0.78 0.01 255);
+  --color-pitch-muted: oklch(0.7 0.015 255);
+  --color-pitch-faint: oklch(0.55 0.015 255);
+  --color-pitch-faintest: oklch(0.45 0.015 255);
+  --color-accent: #4be38a;
+  --color-accent-ink: #0d1117;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+}
+
+body {
+  background: var(--color-pitch-bg);
+  color: var(--color-pitch-text);
+}
+
+::placeholder {
+  color: var(--color-pitch-faint);
+}
+
+@keyframes sa-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
