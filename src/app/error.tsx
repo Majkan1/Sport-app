@@ -2,28 +2,36 @@
 
 import { useEffect } from "react";
 
-export default function Error({error,reset,}: {error: Error;reset: () => void;}) {
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
   useEffect(() => {
     console.error(error);
   }, [error]);
 
   return (
-    <div role="alert" className="flex min-h-screen items-center justify-center bg-white">
-      <div className="max-w-md mx-auto px-6 py-10 bg-white rounded-lg shadow-sm border-l-4 border-red-500 text-center">
-        <div className="mb-4">
-          <h2 className="text-3xl font-bold text-red-600 mb-1">Oops!</h2>
-          <p className="text-slate-600 text-sm">Something went wrong</p>
-        </div>
-        <div className="mb-6 p-3 bg-red-50 rounded-lg">
-          <p className="text-red-700 font-semibold text-xs">
-            We could not load the data. Please check your connection and try again.
-          </p>
-        </div>
-        <button 
+    <div
+      role="alert"
+      className="flex min-h-[60vh] flex-1 items-center justify-center px-6"
+    >
+      <div className="w-full max-w-md rounded-2xl border border-pitch-border bg-pitch-surface p-8 text-center">
+        <h2 className="font-display text-4xl font-bold uppercase tracking-[0.02em]">
+          Oops!
+        </h2>
+        <p className="mt-2 text-sm text-pitch-muted">Something went wrong</p>
+        <p className="mt-6 rounded-[10px] border border-red-500/25 bg-red-500/10 p-3.5 text-[13px] font-semibold text-red-400">
+          We could not load the data. Please check your connection and try
+          again.
+        </p>
+        <button
           onClick={reset}
-          className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md text-sm"
+          className="mt-6 w-full rounded-full bg-accent px-6 py-2.5 text-[14px] font-semibold text-accent-ink transition-[filter] duration-200 hover:brightness-110"
         >
-          🔄 Try again
+          Try again
         </button>
       </div>
     </div>

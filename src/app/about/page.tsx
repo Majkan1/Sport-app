@@ -1,57 +1,68 @@
 export default function AboutPage() {
   return (
-    <main className="min-h-screen flex-1 mx-auto max-w-3xl px-6 py-8">
-      <div className="bg-white rounded-lg shadow-sm p-8 border-l-8 border-slate-900">
-        <h1 className="text-3xl font-bold text-slate-900 mb-6">About SportsApp</h1>
+    <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-12 sm:px-8">
+      <h1 className="font-display text-[clamp(40px,6vw,64px)] font-bold uppercase leading-none tracking-[0.01em]">
+        About SportsApp
+      </h1>
 
-        <p className="text-base text-slate-700 mb-8 leading-relaxed">
-          SportsApp is a lightweight application for browsing football leagues,
-          teams, and basic competition information. The project aims to present
-          external sports data in a clear, easy-to-navigate interface.
-        </p>
+      <p className="mt-5 max-w-[70ch] text-[15px] leading-[1.75] text-pitch-body">
+        SportsApp is a lightweight application for browsing football leagues,
+        teams, and basic competition information. The project aims to present
+        external sports data in a clear, easy-to-navigate interface.
+      </p>
 
-  <div className="bg-blue-50 rounded-lg p-6 mb-8">
-          <h2 className="text-xl font-bold text-slate-900 mb-4">✨ What you will find</h2>
-          <ul className="space-y-2 text-slate-700 text-sm">
-            <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-bold mt-0.5">→</span>
-              <span>Lists of leagues with basic info.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-bold mt-0.5">→</span>
-              <span>Teams for each league with logos.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-600 font-bold mt-0.5">→</span>
-              <span>Quick links to websites and social profiles.</span>
-            </li>
-          </ul>
-        </div>
+      <section className="mt-10 rounded-[14px] border border-pitch-border bg-pitch-surface p-7">
+        <h2 className="text-[13px] font-semibold tracking-[0.2em] uppercase text-accent">
+          What you will find
+        </h2>
+        <ul className="mt-4 space-y-2.5 text-[15px] text-pitch-body">
+          <li className="flex items-start gap-3">
+            <span className="text-accent">→</span>
+            <span>Lists of leagues with basic info.</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-accent">→</span>
+            <span>Teams for each league with logos.</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-accent">→</span>
+            <span>Quick links to websites and social profiles.</span>
+          </li>
+        </ul>
+      </section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-slate-900 mb-2">📊 Data source</h2>
-          <p className="text-slate-700 text-sm leading-relaxed">
-            League and team data is fetched from TheSportsDB (
-            <a href="https://www.thesportsdb.com" className="text-blue-600 hover:text-blue-800 font-semibold underline">thesportsdb.com</a>
-            ).
-          </p>
-        </div>
-
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-slate-900 mb-2">🛠️ Tech stack</h2>
-          <p className="text-slate-700 text-sm leading-relaxed">
-            Built with Next.js, React, Tailwind CSS, and TypeScript.
-          </p>
-        </div>
-
-        <div className="pt-6 border-t-2 border-slate-200">
+      <section className="mt-10">
+        <h2 className="text-[13px] font-semibold tracking-[0.2em] uppercase text-accent">
+          Data source
+        </h2>
+        <p className="mt-3 text-[15px] leading-[1.75] text-pitch-body">
+          League and team data is fetched from TheSportsDB (
           <a
-            href="https://github.com/Majkan1"
-            className="inline-flex items-center gap-2 rounded-lg bg-slate-900 text-white px-6 py-2 font-semibold hover:bg-slate-800 transition-all duration-200 shadow-sm hover:shadow-md text-sm"
+            href="https://www.thesportsdb.com"
+            className="font-semibold text-pitch-text underline-offset-4 transition-colors duration-200 hover:text-accent hover:underline"
           >
-            📂 GitHub
+            thesportsdb.com
           </a>
-        </div>
+          ).
+        </p>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-[13px] font-semibold tracking-[0.2em] uppercase text-accent">
+          Tech stack
+        </h2>
+        <p className="mt-3 text-[15px] leading-[1.75] text-pitch-body">
+          Built with Next.js, React, Tailwind CSS, and TypeScript.
+        </p>
+      </section>
+
+      <div className="mt-12 border-t border-pitch-line pt-8">
+        <a
+          href="https://github.com/Majkan1"
+          className="inline-flex items-center gap-2 rounded-full border border-pitch-border3 px-6 py-2.5 text-[13px] font-semibold tracking-[0.14em] uppercase text-pitch-text transition-colors duration-200 hover:border-accent hover:text-accent"
+        >
+          GitHub <span className="text-[12px]">↗</span>
+        </a>
       </div>
     </main>
   );

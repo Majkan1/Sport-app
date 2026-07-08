@@ -11,7 +11,7 @@ async function fetchJson<T>(url: string, errorMessage: string): Promise<T> {
 export async function getAllLeagues(): Promise<League[]> {
   const data = await fetchJson<LeaguesResponse>(
     `${BASE}/all_leagues.php`,
-    "Failed to load leagues"
+    "Failed to load leagues",
   );
   return data.leagues ?? [];
 }
@@ -19,7 +19,7 @@ export async function getAllLeagues(): Promise<League[]> {
 export async function getLeagueById(id: string): Promise<League | null> {
   const data = await fetchJson<LeaguesResponse>(
     `${BASE}/lookupleague.php?id=${encodeURIComponent(id)}`,
-    "Failed to load the league"
+    "Failed to load the league",
   );
   return data.leagues?.[0] ?? null;
 }
@@ -27,7 +27,7 @@ export async function getLeagueById(id: string): Promise<League | null> {
 export async function getTeamsByLeague(leagueName: string): Promise<Team[]> {
   const data = await fetchJson<TeamsResponse>(
     `${BASE}/search_all_teams.php?l=${encodeURIComponent(leagueName)}`,
-    "Failed to load teams"
+    "Failed to load teams",
   );
   return data.teams ?? [];
 }
@@ -35,7 +35,7 @@ export async function getTeamsByLeague(leagueName: string): Promise<Team[]> {
 export async function getTeamById(id: string): Promise<Team | null> {
   const data = await fetchJson<TeamsResponse>(
     `${BASE}/lookupteam.php?id=${encodeURIComponent(id)}`,
-    "Failed to load the team"
+    "Failed to load the team",
   );
   return data.teams?.[0] ?? null;
 }
